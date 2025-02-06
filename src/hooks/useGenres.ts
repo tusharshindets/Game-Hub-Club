@@ -1,4 +1,5 @@
 
+import { SelectField } from "@chakra-ui/react";
 import useData from "./useData";
 
 export interface Genre {
@@ -8,6 +9,6 @@ export interface Genre {
 }
 
 
-const useGenres = () => useData<Genre>('/genres');
+const useGenres = () => useData<Genre>('/genres', { params: { genres: 'selectedGenre?.id' }});
 
 export default useGenres;
