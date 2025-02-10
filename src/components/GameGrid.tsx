@@ -34,10 +34,13 @@ const GameGrid = ({ gameQuery }: Props) => {
         .catch(err => setError(err.message));
 });*/}
 
+if (error) return <Text>{error}</Text>;
+
     return (
-        <>
-        {error && <Text>{error}</Text>}
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4}}
+       <>
+      {/*  {error && <Text>{error}</Text>} */}
+        <SimpleGrid 
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4}}
          padding='10px'
           spacing={6}
           >
@@ -53,7 +56,8 @@ const GameGrid = ({ gameQuery }: Props) => {
                 </GameCardContainer>
                 ))}
         </SimpleGrid>
-        </>
+        </> 
+        
     );
 }
 
